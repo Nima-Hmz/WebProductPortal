@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}     
+
+{% block content %}   
+
+
+<main class="row text-center text-white">
+            <div class="col-12 mt-5 pt-5">
+                <h2 class="py-5">{% if current_lang == 'fa' %}دسته بندی محصولات{% else %}Product Categories{% endif %}</h2>
+            </div>
+
+            {% for cat in root_categories %}
+                {% if current_lang == 'fa' %}
+                    <div class="col-12 mb-5 col-md-4">
+                        <div class="card2 bg-green-light mx-auto col-10 border-0">
+                            <img src="{{cat.image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body pb-3 text-justify">
+                                <h5 class="card-title">{{ cat.fa_title }}</h5>
+                                <p class="card-text">{{ cat.fa_description|truncatewords:50|safe }}</p>
+                                <a href="{% url 'products:product_list' cat.slug %}?lang={{ current_lang }}" class="btn btn-yellow">مشاهده بیشتر</a>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-12 mb-5 col-md-4">
+                        <div class="card2 bg-green-light mx-auto col-10 border-0">
+                            <img src="{{cat.image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body text-justify">
+                                <h5 class="card-title">{{ cat.en_title }}</h5>
+                                <p class="card-text">{{ cat.en_description|truncatewords:50|safe }}</p>
+                                <a href="{% url 'products:product_list' cat.slug %}?lang={{ current_lang }}" class="btn btn-yellow">see more</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </main>
+
+{% endblock %}

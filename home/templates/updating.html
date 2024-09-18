@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>updating</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{% static 'public/JS/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static './public/CSS/index.css' %}">
+    <link rel="stylesheet" href="{% static './public/CSS/landin.css' %}">
+</head>
+<body class="bg-green d-flex flex-column align-items-center justify-content-start" >
+    <h1 class="text-white mt-5 pt-5">{{ title }}</h1>
+    <h4 class="text-white mt-2 pt-5">{{ description|safe }}</h4>
+   <div>
+    <img class="update-logo" src="{% static 'public/Images/update.jpg' %}" alt="">
+   </div>
+
+
+
+
+
+
+    <script src="{% static 'public/JS/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

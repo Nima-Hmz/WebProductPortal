@@ -1,0 +1,25 @@
+@import url(./navBar.css);
+@import url(./landin.css);
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 450px;
+}
+
+.swiper-slide {
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 18px;
+  background: var(--dark-slate-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  object-fit: cover;
+}

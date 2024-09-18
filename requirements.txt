@@ -1,0 +1,9 @@
+asgiref==3.8.1
+Django==4.2
+django-adminlte3==0.1.6
+django-cleanup==8.1.0
+django-js-asset==2.2.0
+django-tinymce==4.1.0
+pillow==10.4.0
+sqlparse==0.5.1
+typing_extensions==4.12.2

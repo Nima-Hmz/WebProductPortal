@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}     
+
+{% block content %}   
+
+        <main class="row pt-5 my-5">
+            <div class="col-12 col-md-6 text-light mx-auto">
+                <h2 class="f-yekanTitr">{{ title }}</h2>
+                <p class="text">
+
+                	{{ description|safe }}
+
+                </p>
+            </div>
+            <div class="col-10 col-md-4 mx-auto">
+                <img class="col-12 mt-5" src="{{ image.url }}" alt="">
+            </div>
+
+        </main>
+
+{% endblock %}

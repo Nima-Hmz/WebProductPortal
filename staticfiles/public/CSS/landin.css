@@ -1,0 +1,59 @@
+.photo-section {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-border {
+  width: 250px;
+  height: 300px;
+  border: 1px solid yellow;
+  margin-top: 10rem;
+  margin-bottom: -30px;
+  margin-left: -200px;
+}
+.img-number1 {
+  margin-top: -50px;
+  margin-right: -130px;
+}
+.card-img-top {
+  height: 305px;
+}
+.card {
+  background-color: #50613bff;
+  color: white;
+}
+.aboutUsImg {
+  margin-inline: auto;
+  width: 80%;
+}
+.list-group-ul {
+  color: white;
+  list-style: none;
+}
+.list-group-ul li {
+  padding-bottom: 1rem;
+}
+.list-group-ul svg {
+  color: var(--citron);
+  margin-left: 4px;
+}
+.list-group-ul a {
+  color: white;
+  text-decoration: none;
+}
+.page-link {
+  background-color: #28433f;;
+  color: white; /* Adjust the text color for readability */
+}
+.page-link:hover {
+  background-color: darkgreen; /* Optional hover effect */
+}
+.padding-right{
+  margin-right: 2rem!important;
+}
+@media (max-width: 480px) {
+  .photo-section {
+    margin-top: 4rem;
+  }
+}

@@ -1,0 +1,50 @@
+@import url(colors.css);
+
+@font-face {
+  font-family: yekanTitr;
+  src: url(/static/public/Fonts/Yekan-family/Dima-Yekan-Typography.ttf);
+}
+@font-face {
+  font-family: yakanb;
+  src: url(/static/public/Fonts/Yekan-family/Bahij\ Yekan.TTF);
+}
+.f-yekanb {
+  font-family: yakenb;
+}
+.f-yekanTitr {
+  font-family: yekanTitr;
+}
+.f-yekanb-black {
+  color: black;
+  font-family: yakenb;
+}
+.f-yekanTitr-black {
+  color: black;
+  font-family: yekanTitr;
+}
+.text {
+  text-align: justify;
+  font-size: large;
+  line-height: 2.3rem;
+}
+.bg-green {
+  background-color: var(--dark-slate-gray) !important;
+}
+.bg-white{
+  background-color: white;
+}
+.txt-light {
+  color: white;
+}
+.btn-yellow {
+  background-color: rgb(174, 174, 3);
+  color: white;
+  padding: 5px 7px;
+  transition: all ease 0.3s;
+}
+.btn-yellow:hover {
+  background-color: rgb(128, 128, 16);
+}
+.bg-green-light {
+  background-color: var(--dark-moss-green);
+}
