@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- start home -->
+<div class="row mb-5 pb-5 pr-4 p-md-auto text-light text-center text-md-right">
+  <div class=" col-12 col-md-6 mt-5">
+    <div class="mt-5 pt-5">
+
+      <h2 class="">{{index_title}} second 2 </h2>
+
+      <p class="text mt-4 padding-right ">{{index_description|safe}}</p>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="photo-section pr-5">
+      <div class=" img-border"></div>
+      <img class="img-number-2" src="{{ index_image2.url }}" alt="">
+      <img class="img-number1" src="{{ index_image1.url }}" alt="">
+    </div>
+  </div>
+
+</div>
+<!-- end landing -->
+<!-- start swiper and khadamat -->
+<div class="row px-0 bg-green-light">
+  <div class=" col-12 pt-5 mb-5">
+    <h2 class="text-white text-center mt-3 pt-5 pb-5 f-yekanTitr" id="products1">{% if current_lang == 'fa' %}دسته بندی
+      محصولات ما{% else %}Product Categories{% endif %}</h2>
+    <div id="products" class="swiper text-center  mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card col-12 mx-auto border-0">
+            <img src="{{ category_image1.url }}" class="card-img-top" alt="...">
+            <div class="card-body text-justify">
+              <h5 class="card-title">{{ category_title1 }}</h5>
+              <p class="card-text">{{ category_description1|truncatewords:50|safe }}</p>
+              <a href="{% url 'products:product_list' category_slug1 %}?lang={{ current_lang }}"
+                class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card col-12 mx-auto border-0">
+            <img src="{{ category_image2.url }}" class="card-img-top" alt="...">
+            <div class="card-body text-justify">
+              <h5 class="card-title">{{ category_title2 }}</h5>
+              <p class="card-text">{{ category_description2|truncatewords:50|safe }}</p>
+              <a href="{% url 'products:product_list' category_slug2 %}?lang={{ current_lang }}"
+                class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-slide">
+          <div class="card col-12 mx-auto border-0">
+            <img src="{{ category_image3.url }}" class="card-img-top" alt="...">
+            <div class="card-body text-justify">
+              <h5 class="card-title">{{ category_title3 }}</h5>
+              <p class="card-text">{{ category_description3|truncatewords:50|safe }}</p>
+              <a href="{% url 'products:product_list' category_slug3 %}?lang={{ current_lang }}"
+                class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-slide">
+          <div class="card col-12 mx-auto border-0">
+            <img src="{{ category_image4.url }}" class="card-img-top" alt="...">
+            <div class="card-body text-justify">
+              <h5 class="card-title">{{ category_title4 }}</h5>
+              <p class="card-text">{{ category_description4|truncatewords:50|safe }}</p>
+              <a href="{% url 'products:product_list' category_slug4 %}?lang={{ current_lang }}"
+                class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-slide">
+          <div class="card col-12 mx-auto border-0">
+            <img src="{{ category_image5.url }}" class="card-img-top" alt="...">
+            <div class="card-body text-justify">
+              <h5 class="card-title">{{ category_title5 }}</h5>
+              <p class="card-text">{{ category_description5|truncatewords:50|safe }}</p>
+              <a href="{% url 'products:product_list' category_slug5 %}?lang={{ current_lang }}"
+                class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="col-12 d-flex justify-content-left mt-3 px-3 mt-md-5">
+      <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa'%} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
+    </div>
+  </div>
+</div>
+<!-- end swiper and khadamat -->
+
+<!-- start khadamat -->
+<div class="row px-0 pt-3 pb-5  text-center text-white">
+  <div class="col-12 pt-3">
+    <h2 id="jobs" class="f-yekanTitr mb-5">{{ services_title }}</h2>
+  </div>
+  <div class="col-12 col-md-4 pt-5">
+    <p>
+      {{ services_image1|safe }}
+    </p>
+    <p>{{ services_description1 }}</p>
+  </div>
+  <div class="col-12 col-md-4 pt-5">
+    <p>
+      {{ services_image2|safe }}
+    </p>
+    <p>
+      {{ services_description2 }}
+    </p>
+  </div>
+  <div class="col-12 col-md-4 pt-5">
+    <p>
+      {{ services_image3|safe }}
+    </p>
+    <p>
+      {{ services_description3 }}
+    </p>
+  </div>
+  <div class="col-12 col-md-6 pt-5">
+    <p>
+      {{ services_image4|safe }}
+    </p>
+    <p>
+      {{ services_description4 }}
+    </p>
+  </div>
+  <div class="col-12 col-md-6 pt-5">
+    <p>
+      {{ services_image5|safe }}
+    </p>
+    <p>
+      {{ services_description5 }}
+    </p>
+  </div>
+</div>
+<!-- end khadamat -->
+<!-- start last maghalat -->
+<div class="row px-0 pt-5 pb-5 text-center bg-green-light text-white">
+  <div id="notes" class="col-12 pt-3">
+    <h2 class="f-yekanTitr mb-5 ">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
+  </div>
+  <div class="col-12 mb-5 mb-md-0 col-md-4">
+    <div class="card mx-auto col-10 border-0">
+      <img src="{{ article_image3.url }}" class="card-img-top" alt="...">
+      <div class="card-body pb-3 text-justify">
+        <h5 class="card-title">{{ article_title3 }}</h5>
+        <p class="card-text">{{ article_description3|truncatewords:10|safe }}</p>
+        <a href="{% url 'articles:article_detail' article_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mb-5 mb-md-0 col-md-4">
+    <div class="card mx-auto col-10 border-0">
+      <img src="{{ article_image2.url }}" class="card-img-top" alt="...">
+      <div class="card-body pb-3 text-justify">
+        <h5 class="card-title">{{ article_title2 }}</h5>
+        <p class="card-text">{{ article_description2|truncatewords:10|safe }}</p>
+        <a href="{% url 'articles:article_detail' article_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mb-5 mb-md-0 col-md-4">
+    <div class="card  mx-auto col-10 border-0">
+      <img src="{{ article_image1.url }}" class="card-img-top" alt="...">
+      <div class="card-body pb-3 text-justify">
+        <h5 class="card-title">{{ article_title1 }}</h5>
+        <p class="card-text">{{ article_description1|truncatewords:10|safe }}</p>
+        <a href="{% url 'articles:article_detail' article_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 d-flex justify-content-left px-5 mt-md-5">
+    <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
+  </div>
+</div>
+<!-- end maghalat -->
+<!-- start about us section -->
+<div class="row px-0 pb-5 mt-5">
+
+  <div class="col-12 col-md-5">
+    <img class="aboutUsImg d-block mt-4 mx-auto" src="{{about_image.url}}" alt="">
+  </div>
+  <div id="aboutUs" class="col-12 col-md-7 text-center p-3 text-white">
+    <h2 class="f-yekanTitr pb-4">{{about_title}}</h2>
+    <p class="text">{{about_description|truncatewords:150|safe}}</p>
+  </div>
+
+</div>
+<!-- end aboutus section -->
+
+
+<script src="{% static '/public/JS/index.js' %}"></script>
+
+
+
+
+{% endblock %}
