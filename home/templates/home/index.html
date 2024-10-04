@@ -7,15 +7,15 @@
             <div class="swiper-wrapper">
                 <!-- اسلاید‌ها -->
                 <div class="swiper-slide flex items-center justify-center  h-auto">
-                    <img src="{% static '/dist/was_ngo_main_co-Z6fY6hko.jpg' %}" alt="اسلاید 1"
+                    <img src="{{ index_swiper.image1.url }}" alt="اسلاید 1"
                         class="w-full  h-auto md:h-64 object-cover">
                 </div>
                 <div class="swiper-slide flex items-center justify-center  h-auto md:h-64">
-                    <img src="https://via.placeholder.com/1920x1080?text=اسلاید+2" alt="اسلاید 2"
+                    <img src="{{ index_swiper.image2.url }}" alt="اسلاید 2"
                         class="w-full  h-auto md:h-64 object-cover">
                 </div>
                 <div class="swiper-slide flex items-center justify-center  h-auto md:h-64">
-                    <img src="https://via.placeholder.com/1920x1080?text=اسلاید+3" alt="اسلاید 3"
+                    <img src="{{ index_swiper.image3.url }}" alt="اسلاید 3"
                         class="w-full  h-auto md:h-64 object-cover">
                 </div>
             </div>
@@ -24,33 +24,17 @@
         <!--    start about-->
         <div class="mt-10 flex flex-col md:flex-row">
             <div class="flex flex-col w-full md:w-7/12 ">
-                <h1 class="text-5xl font-extrabold font-yekanTittr text-white text-center md:text-right">فوم گستر تهران
+                <h1 class="text-5xl font-extrabold font-yekanTittr text-white text-center md:text-right">{{ index_title }}
                 </h1>
                 <p class="font-yekanMatn text-justify text-white pt-6 leading-9">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                    و
-                    متون
-                    بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                    متنوع با
-                    هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                    جامعه
-                    و
-                    متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و
-                    فرهنگ
-                    پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-                    راهکارها و
-                    شرایط
-                    سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل
-                    دنیای
-                    موجود
-                    طراحی اساسا مورد استفاده قرار گیرد.
+                    {{ index_description|safe }}
                 </p>
             </div>
             <div class="w-full md:w-5/12 ">
                 <div class="w-full relative">
                     <img class="absolute w-full md:w-6/12 md:right-1/2 top-9 img-number1"
-                        src="{% static '/dist/power815799640-RBisT4c-.png' %}" alt="">
-                    <img class="absolute w-8/12 md:w-4/12 md:right-1/3 top-20 " src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}"
+                        src="{{index_image2.url}}" alt="">
+                    <img class="absolute w-8/12 md:w-4/12 md:right-1/3 top-20 " src="{{ index_image1.url }}"
                         alt="">
                 </div>
             </div>
@@ -159,21 +143,12 @@
             <div class=" text-right mt-10 w-full md:w-8/12">
                 <p
                     class="text-3xl md:mt-0 md:pt-0 mb-10 md:mb-0 font-yekanTittr dark:text-white text-white  font-bold text-center md:text-right">
-                    درباره ما</p>
-                <p class=" text-justify text-white mb-10 leading-8"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                    صنعت چاپ و
-                    با
-                    استفاده از
-                    طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
-                    فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در
-                    شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت
-                    بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در
-                    این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                    وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا
-                    مورد استفاده قرار گیرد..</p>
+                    {{ aboutus_title }}</p>
+                <p class=" text-justify text-white mb-10 leading-8">
+                    {{ about_description|safe }}</p>
             </div>
             <div class="photo w-full md:w-4/12 ">
-                <img class="w-8/12 mx-auto" src="{% static '/dist/power815799640-RBisT4c-.png' %}" alt="">
+                <img class="w-8/12 mx-auto" src="{{ about_image.url }}" alt="">
             </div>
         </div>
         <!-- end about us -->
@@ -187,28 +162,65 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
                     <div class="blog-img">
-                        <img class="" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
+                        <img class="" src="{{ article_image1.url }}" alt="">
                     </div>
                     <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">فوم های زیبا</p>
+                        <p class="my-5 text-xl text-white font-bold">{{ article_title1 }}</p>
                         <p class="text-justify text-white mb-10">
-                            می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                            خلاقی و فرهنگ
-                            ...پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان و ر
+                            {{ article_description1|truncatewords:15|safe }}
                         </p>
-                        <a class="text-blue-300 " href="#">خواندن ادامه مقاله</a>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug1 %}">خواندن ادامه مقاله</a>
                     </div>
                 </div>
-                <div class="swiper-slide  bg-orange-600 dark:bg-sky-800">
+                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
+                    <div class="blog-img">
+                        <img class="" src="{{ article_image2.url }}" alt="">
+                    </div>
+                    <div class=" px-5">
+                        <p class="my-5 text-xl text-white font-bold">{{ article_title2 }}</p>
+                        <p class="text-justify text-white mb-10">
+                            {{ article_description2|truncatewords:15|safe }}
+                        </p>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug2 %}">خواندن ادامه مقاله</a>
+                    </div>
+                </div>
+                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
+                    <div class="blog-img">
+                        <img class="" src="{{ article_image3.url }}" alt="">
+                    </div>
+                    <div class=" px-5">
+                        <p class="my-5 text-xl text-white font-bold">{{ article_title3 }}</p>
+                        <p class="text-justify text-white mb-10">
+                            {{ article_description3|truncatewords:15|safe }}
+                        </p>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug3 %}">خواندن ادامه مقاله</a>
+                    </div>
 
                 </div>
-                <div class="swiper-slide  bg-orange-600 dark:bg-sky-800">
+                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
+                    <div class="blog-img">
+                        <img class="" src="{{ article_image4.url }}" alt="">
+                    </div>
+                    <div class=" px-5">
+                        <p class="my-5 text-xl text-white font-bold">{{ article_title4 }}</p>
+                        <p class="text-justify text-white mb-10">
+                            {{ article_description4|truncatewords:15|safe }}
+                        </p>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug4 %}">خواندن ادامه مقاله</a>
+                    </div>
 
                 </div>
-                <div class="swiper-slide  bg-orange-600 dark:bg-sky-800">
-
-                </div>
-                <div class="swiper-slide  bg-orange-600 dark:bg-sky-800">
+                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
+                    <div class="blog-img">
+                        <img class="" src="{{ article_image5.url }}" alt="">
+                    </div>
+                    <div class=" px-5">
+                        <p class="my-5 text-xl text-white font-bold">{{ article_title5 }}</p>
+                        <p class="text-justify text-white mb-10">
+                            {{ article_description5|truncatewords:15|safe }}
+                        </p>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug5 %}">خواندن ادامه مقاله</a>
+                    </div>
 
                 </div>
 
@@ -216,7 +228,9 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="button pt-5">
+            <a href="{% url 'articles:article_list' %}">
             <button class="dark:bg-sky-700 bg-orange-500 p-2 text-white rounded-md"> همه مقالات</button>
+            </a>
         </div>
         <!-- end blogs -->
 

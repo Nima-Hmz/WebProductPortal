@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from products.models import Category
 from articles.models import Article
-from .models import FirstTitle, AboutUs
+from .models import FirstTitle, AboutUs, IndexSwiper
 from .template_manager import language_switcher
 
 # Create your views here.
@@ -12,13 +12,18 @@ class IndexView(View):
 	def get(self, request):
 		first_title = FirstTitle.objects.first()
 		aboutus = AboutUs.objects.first()
+		index_swiper = IndexSwiper.objects.first()
 
 		context = {
 
 			'index_image1':first_title.image,
 			'index_image2':first_title.image2,
 			'about_image':aboutus.image,
+			'aboutus_title': aboutus.fa_title,
+			'about_description':aboutus.fa_description,
 			'main_index':True,
+			'index_swiper': index_swiper,
+
 
 		}
 
@@ -29,7 +34,7 @@ class IndexView(View):
 			context.update({f'category_image{i}':obj.image})
 			context.update({f'category_slug{i}':obj.slug})
 
-		for i, obj in enumerate(Article.objects.all()[:3], start=1):
+		for i, obj in enumerate(Article.objects.all()[:5], start=1):
 			context.update(language_switcher(obj, "article", f"{i}"))
 			context.update({f'article_image{i}':obj.thumbnail})
 			context.update({f'article_slug{i}':obj.slug})

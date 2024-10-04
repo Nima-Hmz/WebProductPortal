@@ -47,6 +47,18 @@ class ContactUs(models.Model):
 		verbose_name = ("تماس با ما")
 		verbose_name_plural = ('تماس با ما')
 
+class IndexSwiper(models.Model):
+	image1 = models.ImageField(upload_to='swiper/', verbose_name=("تصویر1"))
+	image2 = models.ImageField(upload_to='swiper/', verbose_name=("تصویر2"))
+	image3 = models.ImageField(upload_to='swiper/', verbose_name=("تصویر3"))
+
+	def __str__(self):
+		return "تصویر اسلایدر"
+
+	class Meta:
+		verbose_name = ("اسلاید صفحه اول")
+		verbose_name_plural = ('اسلاید صفحه اول')
+
 
 
 class Updating(models.Model):
@@ -60,3 +72,4 @@ class Updating(models.Model):
 	class Meta:
 		verbose_name = ("وضعیت توسعه")
 		verbose_name_plural = ('وضعیت توسعه')
+
