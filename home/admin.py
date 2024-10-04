@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FirstTitle, ContactUs, AboutUs, Services, Updating
+from .models import FirstTitle, ContactUs, AboutUs, Updating
 
 # Register your models here.
 
@@ -8,7 +8,6 @@ from .models import FirstTitle, ContactUs, AboutUs, Services, Updating
 admin.site.register(FirstTitle)
 admin.site.register(ContactUs)
 admin.site.register(AboutUs)
-admin.site.register(Services)
 admin.site.register(Updating)
 
 
