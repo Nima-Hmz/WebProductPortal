@@ -25,16 +25,12 @@ class ArticleListView(View):
 
 class ArticleDetailView(View):
 	def get(self, request, slug):
-		lang = request.GET.get('lang', 'fa')
-		valid_langs = ['en', 'fa']
-		if lang not in valid_langs:
-			lang = 'fa'
 
 		article = get_object_or_404(Article, slug=slug)
 		context = {
 
-			'title':article.get_title(lang),
-			'description':article.get_description(lang),
+			'title':article.fa_title,
+			'description':article.fa_description,
 			'image':article.thumbnail,
 			'pub_date':article.pub_date,
 			'category':article.category,

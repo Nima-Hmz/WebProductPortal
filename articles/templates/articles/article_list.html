@@ -3,68 +3,101 @@
 
 
 {% block content %}
+<main class="pt-28">
+        <p class="text-3xl pt-36  dark:text-white text-white  text-center mt-32  font-yekanTittr font-bold">
+            محصولات
+            ما</p>
+        <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
+            <!-- az in estefade kon -->
+            <a href="">
+                <div
+                    class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center text-white  bg-orange-600 dark:bg-sky-800">
+                    <div class="card-img bg-cover">
+                        <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
+                    </div>
+                    <div class="content mt-5">
+                        <p class="mb-5">
+                            <span class="text-xl font-bold">فوم باحال</span>
+                        </p>
+                        <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                        <button class=" text-indigo-300 rounded-md p-2 mt-5">مطالعه بیشتر
+                        </button>
+                    </div>
+            </a>
+            <!--  -->
 
-        <main class="row text-center text-white">
-            <div class="col-12 mt-5 pt-5">
-                <h2 class="py-5">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
+
+
+            <!-- na ina -->
+        </div>
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
             </div>
-            {% for article in article_list1 %}
-                {% if current_lang == 'fa' %}
-                <div class="col-12 mb-5 col-md-4">
-                    <div class="card2 bg-green-light mx-auto col-10 border-0">
-                        <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
-                        <div class="card-body pb-3 text-justify">
-                            <h5 class="card-title">{{ article.fa_title }}</h5>
-                            <p class="card-text">{{ article.fa_description|truncatewords:10|safe }}</p>
-                            <a href="{% url 'articles:article_detail' article.slug %}?lang=fa" class="btn btn-yellow">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-                {% else %}
-                <div class="col-12 mb-5 col-md-4">
-                    <div class="card2 bg-green-light mx-auto col-10 border-0">
-                        <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
-                        <div class="card-body text-justify">
-                            <h5 class="card-title">{{ article.en_title }}</h5>
-                            <p class="card-text">{{ article.en_description|truncatewords:10|safe }}</p>
-                            <a href="{% url 'articles:article_detail' article.slug %}?lang=en" class="btn btn-yellow">see more</a>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
-
-            <div aria-label="Page navigation example ">
-              <div class="pagination d-flex justify-content-center mb-5 pb-5">
-                <li class="page-item">
-
-                {% if article_list1.has_previous %}
-                  <a class="page-link" href="{% url 'articles:article_list' %}?lang={{ current_lang }}&page={{article_list1.previous_page_number}}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">{% if current_lang == 'fa' %}قبلی{% else %}Previous{% endif %}</span>
-                  </a>
-                {% endif %}
-                </li>
-
-                {% for i in article_list1.paginator.page_range %}
-                    {% if article_list1.number == i %}
-                <li class="page-item"><span class="page-link">{{i}}</span></li>
-                    {% endif %}
-                {% endfor %}
-
-                {% if article_list1.has_next %}
-                <li class="page-item">
-                  <a class="page-link" href="?lang={{ current_lang }}&page={{article_list1.next_page_number}}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">{% if current_lang == 'fa' %}بعدی{% else %}next{% endif %}</span>
-                  </a>
-                </li>
-                {% endif %}
-
-              </div>
-            </>
-
-            
-
-        </main>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">فوم باحال</span>
+                </p>
+                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button>
+            </div>
+        </div>
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">فوم باحال</span>
+                </p>
+                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button>
+            </div>
+        </div>
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">فوم باحال</span>
+                </p>
+                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button>
+            </div>
+        </div>
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">فوم باحال</span>
+                </p>
+                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button>
+            </div>
+        </div>
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">فوم باحال</span>
+                </p>
+                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button>
+            </div>
+        </div>
+        <!--  -->
+        </div>
+        </div>
+        <!-- end product -->
+    </main>
 {% endblock %}
