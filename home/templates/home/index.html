@@ -27,7 +27,7 @@
                 <h1 class="text-5xl font-extrabold font-yekanTittr text-white text-center md:text-right">{{ index_title }}
                 </h1>
                 <p class="font-yekanMatn text-justify text-white pt-6 leading-9">
-                    {{ index_description|safe }} test second
+                    {{ index_description|safe }} 
                 </p>
             </div>
             <div class="w-full md:w-5/12 ">
@@ -48,91 +48,24 @@
                 ما</p>
             <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
                 <!-- az in estefade kon -->
-                <a href="">
-                    <div
-                        class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center text-white  bg-orange-600 dark:bg-sky-800">
-                        <div class="card-img bg-cover">
-                            <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
-                        </div>
-                        <div class="content mt-5">
-                            <p class="mb-5">
-                                <span class="text-xl font-bold">فوم باحال</span>
-                            </p>
-                            <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                            <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                            </button>
-                        </div>
-                </a>
-                <!--  -->
+                
 
-
-
-                <!-- na ina -->
-            </div>
+            
+            {% for category in category0 %}
             <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
                 <div class="card-img bg-cover">
-                    <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
+                    <img class="card-img" src="{{ category.image.url }}" alt="">
                 </div>
                 <div class="content mt-5">
                     <p class="mb-5">
-                        <span class="text-xl font-bold">فوم باحال</span>
+                        <span class="text-xl font-bold">{{ category.fa_title }}</span>
                     </p>
-                    <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
+                    <p class="subtext">{{ category.fa_description_short }}</p>
                     <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
                     </button>
                 </div>
             </div>
-            <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-                <div class="card-img bg-cover">
-                    <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
-                </div>
-                <div class="content mt-5">
-                    <p class="mb-5">
-                        <span class="text-xl font-bold">فوم باحال</span>
-                    </p>
-                    <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                    </button>
-                </div>
-            </div>
-            <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-                <div class="card-img bg-cover">
-                    <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
-                </div>
-                <div class="content mt-5">
-                    <p class="mb-5">
-                        <span class="text-xl font-bold">فوم باحال</span>
-                    </p>
-                    <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                    </button>
-                </div>
-            </div>
-            <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-                <div class="card-img bg-cover">
-                    <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
-                </div>
-                <div class="content mt-5">
-                    <p class="mb-5">
-                        <span class="text-xl font-bold">فوم باحال</span>
-                    </p>
-                    <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                    </button>
-                </div>
-            </div>
-            <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-                <div class="card-img bg-cover">
-                    <img class="card-img" src="{% static '/dist/paya-3-resize-Yg2vScDv.jpg' %}" alt="">
-                </div>
-                <div class="content mt-5">
-                    <p class="mb-5">
-                        <span class="text-xl font-bold">فوم باحال</span>
-                    </p>
-                    <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                    </button>
-                </div>
+            {% endfor %}
             </div>
             <!--  -->
         </div>

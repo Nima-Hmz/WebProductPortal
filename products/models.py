@@ -11,6 +11,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200, unique=True, verbose_name="اسلاگ", allow_unicode  = True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children', verbose_name='دسته بندی مادر')
     fa_description = HTMLField(verbose_name="توضیحات دسته بندی اختیاری", null=True, blank=True)
+    fa_description_short = models.TextField(verbose_name='توضیح کوتاه', null=True, blank=True)
     star = models.BooleanField(default=False, verbose_name='دسته بندی ستاره دار')
     image = models.ImageField(upload_to="category/", verbose_name="عکس") 
 
@@ -33,6 +34,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=200, unique=True, verbose_name="آدرس" , allow_unicode  = True)
     image = models.ImageField(upload_to="products/", verbose_name="عکس")
     fa_description = HTMLField(verbose_name="توضیحات و اطلاعات")
+    fa_description_short = models.TextField(verbose_name='توضیح کوتاه', null=True, blank=True)
     available = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
     pub_date = models.DateTimeField(default=timezone.now, verbose_name=("زمان انتشار"))
     created = models.DateTimeField(auto_now_add = True, verbose_name="ایجاد شده")

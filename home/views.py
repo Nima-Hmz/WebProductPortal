@@ -13,6 +13,7 @@ class IndexView(View):
 		first_title = FirstTitle.objects.first()
 		aboutus = AboutUs.objects.first()
 		index_swiper = IndexSwiper.objects.first()
+		category0 = Category.objects.filter(star=True)[:6]
 
 		context = {
 
@@ -23,6 +24,7 @@ class IndexView(View):
 			'about_description':aboutus.fa_description,
 			'main_index':True,
 			'index_swiper': index_swiper,
+			'category0':category0,
 
 
 		}
