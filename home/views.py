@@ -3,7 +3,6 @@ from django.views import View
 from products.models import Category
 from articles.models import Article
 from .models import FirstTitle, AboutUs, IndexSwiper
-from .template_manager import language_switcher
 
 # Create your views here.
 
