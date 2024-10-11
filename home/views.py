@@ -14,6 +14,7 @@ class IndexView(View):
 		aboutus = AboutUs.objects.first()
 		index_swiper = IndexSwiper.objects.first()
 		category0 = Category.objects.filter(star=True)[:6]
+		article0 = Article.objects.all()[:4]
 
 		context = {
 
@@ -25,21 +26,12 @@ class IndexView(View):
 			'main_index':True,
 			'index_swiper': index_swiper,
 			'category0':category0,
+			'article0':article0,
+			'index_title':first_title.fa_title,
+			'index_description':first_title.fa_description
 
 
 		}
-
-		context.update(language_switcher(first_title, "index"))
-
-		for i, obj in enumerate(Category.objects.filter(star=True)[:5], start=1):
-			context.update(language_switcher(obj, "category", f"{i}"))
-			context.update({f'category_image{i}':obj.image})
-			context.update({f'category_slug{i}':obj.slug})
-
-		for i, obj in enumerate(Article.objects.all()[:5], start=1):
-			context.update(language_switcher(obj, "article", f"{i}"))
-			context.update({f'article_image{i}':obj.thumbnail})
-			context.update({f'article_slug{i}':obj.slug})
 
 
 		return render(request, 'home/index.html', context=context)

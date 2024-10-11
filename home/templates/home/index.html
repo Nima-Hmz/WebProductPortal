@@ -93,70 +93,21 @@
                     آخرین مقالات منتشر شده</p>
             </div>
             <div class="swiper-wrapper">
-                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
-                    <div class="blog-img">
-                        <img class="" src="{{ article_image1.url }}" alt="">
-                    </div>
-                    <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">{{ article_title1 }}</p>
-                        <p class="text-justify text-white mb-10">
-                            {{ article_description1|truncatewords:15|safe }}
-                        </p>
-                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug1 %}">خواندن ادامه مقاله</a>
-                    </div>
-                </div>
-                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
-                    <div class="blog-img">
-                        <img class="" src="{{ article_image2.url }}" alt="">
-                    </div>
-                    <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">{{ article_title2 }}</p>
-                        <p class="text-justify text-white mb-10">
-                            {{ article_description2|truncatewords:15|safe }}
-                        </p>
-                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug2 %}">خواندن ادامه مقاله</a>
-                    </div>
-                </div>
-                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
-                    <div class="blog-img">
-                        <img class="" src="{{ article_image3.url }}" alt="">
-                    </div>
-                    <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">{{ article_title3 }}</p>
-                        <p class="text-justify text-white mb-10">
-                            {{ article_description3|truncatewords:15|safe }}
-                        </p>
-                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug3 %}">خواندن ادامه مقاله</a>
-                    </div>
 
-                </div>
+                {% for article in article0 %}
                 <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
                     <div class="blog-img">
-                        <img class="" src="{{ article_image4.url }}" alt="">
+                        <img class="" src="{{ article.thumbnail.url }}" alt="">
                     </div>
                     <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">{{ article_title4 }}</p>
+                        <p class="my-5 text-xl text-white font-bold">{{ article.fa_title }}</p>
                         <p class="text-justify text-white mb-10">
-                            {{ article_description4|truncatewords:15|safe }}
+                            {{ article.fa_description_short }}
                         </p>
-                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug4 %}">خواندن ادامه مقاله</a>
+                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article.slug %}">خواندن ادامه مقاله</a>
                     </div>
-
                 </div>
-                <div class="swiper-slide flex flex-col align-top bg-orange-600 dark:bg-sky-800">
-                    <div class="blog-img">
-                        <img class="" src="{{ article_image5.url }}" alt="">
-                    </div>
-                    <div class=" px-5">
-                        <p class="my-5 text-xl text-white font-bold">{{ article_title5 }}</p>
-                        <p class="text-justify text-white mb-10">
-                            {{ article_description5|truncatewords:15|safe }}
-                        </p>
-                        <a class="text-blue-300 " href="{% url 'articles:article_detail' article_slug5 %}">خواندن ادامه مقاله</a>
-                    </div>
-
-                </div>
-
+                {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
         </div>
