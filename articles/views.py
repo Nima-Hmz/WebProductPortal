@@ -28,13 +28,7 @@ class ArticleDetailView(View):
 		article = get_object_or_404(Article, slug=slug)
 		context = {
 
-			'title':article.fa_title,
-			'description':article.fa_description,
-			'image':article.thumbnail,
-			'pub_date':article.pub_date,
-			'category':article.category,
-			'article_temp':True,
-
+			'article':article,
 
 		}
 		return render(request, 'articles/article_detail.html', context)
