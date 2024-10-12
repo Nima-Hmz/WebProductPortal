@@ -4,11 +4,11 @@
 
 {% block content %}
 <main class="pt-28">
-        <p class="text-3xl pt-36  dark:text-white text-white  text-center mt-32  font-yekanTittr font-bold">
-            محصولات
-            ما</p>
-        <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
-            <!-- az in estefade kon -->
+    <p class="text-3xl pt-36  dark:text-white text-white  text-center mt-32 font-yekanTittr font-bold">
+        محصولات
+        ما</p>
+    <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
+        <!-- az in estefade kon -->
 
         {% for article in article_list1 %}
         <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
@@ -21,22 +21,33 @@
                 </p>
                 <p class="subtext">{{ article.fa_description_short }}</p>
                 <a href="{% url 'articles:article_detail' article.slug %}">
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button></a>
+                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                    </button>
+                </a>
             </div>
         </div>
+
         {% endfor %}
-
-
-            <!-- na ina -->
+        <div class="flex w-full items-center mt-10 justify-center space-x-2">
+            <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
+                قبلی
+            </button>
+            <span class="bg-blue-300 text-white px-4 py-2 rounded">
+                ۱
+            </span>
+            <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
+                بعدی
+            </button>
         </div>
 
-
-        <!--  -->
-        </div>
-        </div>
-        <!-- end product -->
+    </div>
 
 
-    </main>
+    <!--  -->
+    </div>
+    </div>
+    <!-- end product -->
+
+
+</main>
 {% endblock %}
