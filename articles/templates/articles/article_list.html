@@ -9,95 +9,34 @@
             ما</p>
         <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
             <!-- az in estefade kon -->
-            <a href="">
-                <div
-                    class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center text-white  bg-orange-600 dark:bg-sky-800">
-                    <div class="card-img bg-cover">
-                        <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-                    </div>
-                    <div class="content mt-5">
-                        <p class="mb-5">
-                            <span class="text-xl font-bold">فوم باحال</span>
-                        </p>
-                        <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                        <button class=" text-indigo-300 rounded-md p-2 mt-5">مطالعه بیشتر
-                        </button>
-                    </div>
-            </a>
-            <!--  -->
 
+        {% for article in article_list1 %}
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="{{ article.thumbnail.url }}" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">{{ article.fa_title }}</span>
+                </p>
+                <p class="subtext">{{ article.fa_description_short }}</p>
+                <a href="{% url 'articles:article_detail' article.slug %}">
+                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                </button></a>
+            </div>
+        </div>
+        {% endfor %}
 
 
             <!-- na ina -->
         </div>
-        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-            <div class="card-img bg-cover">
-                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-            </div>
-            <div class="content mt-5">
-                <p class="mb-5">
-                    <span class="text-xl font-bold">فوم باحال</span>
-                </p>
-                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button>
-            </div>
-        </div>
-        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-            <div class="card-img bg-cover">
-                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-            </div>
-            <div class="content mt-5">
-                <p class="mb-5">
-                    <span class="text-xl font-bold">فوم باحال</span>
-                </p>
-                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button>
-            </div>
-        </div>
-        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-            <div class="card-img bg-cover">
-                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-            </div>
-            <div class="content mt-5">
-                <p class="mb-5">
-                    <span class="text-xl font-bold">فوم باحال</span>
-                </p>
-                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button>
-            </div>
-        </div>
-        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-            <div class="card-img bg-cover">
-                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-            </div>
-            <div class="content mt-5">
-                <p class="mb-5">
-                    <span class="text-xl font-bold">فوم باحال</span>
-                </p>
-                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button>
-            </div>
-        </div>
-        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
-            <div class="card-img bg-cover">
-                <img class="card-img" src="./assets//Images/paya-3-resize.jpg" alt="">
-            </div>
-            <div class="content mt-5">
-                <p class="mb-5">
-                    <span class="text-xl font-bold">فوم باحال</span>
-                </p>
-                <p class="subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis </p>
-                <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                </button>
-            </div>
-        </div>
+
+
         <!--  -->
         </div>
         </div>
         <!-- end product -->
+
+
     </main>
 {% endblock %}

@@ -15,7 +15,6 @@ class ArticleListView(View):
 		article_list1 = paginator.get_page(page)
 		context = {
 
-			'article_temp':True,
 			'article_list1':article_list1,
 
 

@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "customFont";
-  src: url("/static/assets/fonts/Yekan-family/Dima-Yekan-Typography.ttf");
+  src: url("./../fonts/Yekan-family/Dima-Yekan-Typography.ttf");
 }
 @font-face {
   font-family: "customFont2";
-  src: url("/static/assets/fonts/Yekan-family/SYEKAN.TTF");
+  src: url("./../fonts/Yekan-family/SYEKAN.TTF");
 }
 body {
   transition: all 0.3s ease-in; /* Smooth transition for theme change */

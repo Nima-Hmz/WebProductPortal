@@ -10,16 +10,11 @@ from home.template_manager import language_switcher
 
 class ProductsView(View):
 	def get(self, request):
-		lang = request.GET.get('lang', 'fa')
-		valid_langs = ['en', 'fa']
-		if lang not in valid_langs:
-			lang = 'fa'
 
 		root_categories = Category.objects.filter(parent__isnull=True)
 		context = {
 
 			'root_categories':root_categories,
-			'pro_temp':True
 
 		}
 			
