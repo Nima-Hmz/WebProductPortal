@@ -1,38 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block content %}
-  <main class="pt-20">
-    <div class="flex w-11/12 mx-auto flex-col">
-      <div class="overflow-x-auto mt-32 sm:-mx-6 lg:-mx-8">
-        <div class="inline-block w-full py-2 sm:px-6 lg:px-8">
-          <div class="overflow-hidden">
-            <table class="w-full text-right text-sm font-light dark:text-white">
-              <thead class="border-b border-neutral-200 bg-red-500 font-medium dark:border-white/10">
-                <tr>
-                  <th scope="col" class="px-6 py-4">شماره محصول</th>
-                  <th scope="col" class="px-6 py-4">اسم</th>
-                  <th scope="col" class="px-6 py-4">ابعاد</th>
-                  <th scope="col" class="px-6 py-4">جزییات</th>
-                </tr>
-              </thead>
-              <tbody class="">
-                <tr class="border-b border-neutral-200 bg-black/[0.02] h-16 dark:border-white/10 p-12">
-                  <td class="whitespace-nowrap text-right px-6 py-5 font-medium">1</td>
-                  <td class="whitespace-nowrap px-6 py-4">Mark</td>
-                  <td class="whitespace-nowrap px-6 py-4">Otto</td>
-                  <td class="whitespace-nowrap px-6 py-4">
-                    <a class="text-blue-300" href="">مشاهده بیشتر</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<main class="pt-28">
+    <p class="text-3xl pt-36  dark:text-white text-white  text-center mt-32 font-yekanTittr font-bold">
+        محصولات
+        ما</p>
+    <div class="mt-10 flex justify-center flex-col md:flex-row flex-wrap">
+        <!-- az in estefade kon -->
+
+        {% for category in root_categories %}
+        <div class="card mx-auto my-2 md:m-2 w-11/12 md:w-3/12 text-center  bg-orange-600 dark:bg-sky-800">
+            <div class="card-img bg-cover">
+                <img class="card-img" src="{{ category.image.url }}" alt="">
+            </div>
+            <div class="content mt-5">
+                <p class="mb-5">
+                    <span class="text-xl font-bold">{{ category.fa_title }}</span>
+                </p>
+                <p class="subtext">{{ category.fa_description_short }}</p>
+                <a href="{% url 'products:product_list' category.slug %}">
+                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                    </button>
+                </a>
+            </div>
         </div>
-      </div>
+
+        {% endfor %}
+
     </div>
 
-    <script type="module" src="{% static 'assets/JS/menu.js' %}"></script>
-    <script type="module" src="{% static 'assets/JS/theme.js' %}"></script>
-  </main>
+
+    <!--  -->
+    </div>
+    </div>
+    <!-- end product -->
+
+
+</main>
 {% endblock %}
