@@ -37,18 +37,11 @@ class ProductListView(View):
 
 class ProductDetailView(View):
 	def get(self, request, slug):
-		lang = request.GET.get('lang', 'fa')
-		valid_langs = ['en', 'fa']
-		if lang not in valid_langs:
-			lang = 'fa'
 
 		product = get_object_or_404(Product, slug=slug)
 		context = {
-
-			"title":product.get_title(lang),
-			"description":product.get_description(lang),
-			"image": product.image,
-			'pro_temp':True
+		
+			'product':product
 
 		}
 		return render(request, 'products/product_detail.html', context)

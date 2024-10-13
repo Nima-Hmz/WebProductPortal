@@ -3,39 +3,37 @@
 
 {% block content %} 
 
-
-
-<main class="row text-center text-white">
-            <div class="col-12 mt-5 pt-5">
-                <h2 class="py-5">{{ cat_title }}</h2>
-            </div>
-
-            {% for product in products %}
-                {% if current_lang == 'fa' %}
-                    <div class="col-12 mb-5 col-md-4">
-                        <div class="card2 bg-green-light mx-auto col-10 border-0">
-                            <img src="{{product.image.url}}" class="card-img-top" alt="...">
-                            <div class="card-body pb-3 text-justify">
-                                <h5 class="card-title">{{ product.fa_title }}</h5>
-                                <p class="card-text">{{ product.fa_description|truncatewords:50|safe }}</p>
-                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">مشاهده بیشتر</a>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="col-12 mb-5 col-md-4">
-                        <div class="card2 bg-green-light mx-auto col-10 border-0">
-                            <img src="{{product.image.url}}" class="card-img-top" alt="...">
-                            <div class="card-body text-justify">
-                                <h5 class="card-title">{{ product.en_title }}</h5>
-                                <p class="card-text">{{ product.en_description|truncatewords:50|safe }}</p>
-                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">see more</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-
-        </main>
+  <main class="pt-20">
+    <div class="flex w-11/12 mx-auto flex-col">
+      <div class="overflow-x-auto mt-32 sm:-mx-6 lg:-mx-8">
+        <div class="inline-block w-full py-2 sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="w-full text-right text-sm font-light dark:text-white">
+              <thead class="border-b border-neutral-200 bg-red-500 font-medium dark:border-white/10">
+                <tr>
+                  <th scope="col" class="px-6 py-4">شماره محصول</th>
+                  <th scope="col" class="px-6 py-4">اسم</th>
+                  <th scope="col" class="px-6 py-4">ابعاد</th>
+                  <th scope="col" class="px-6 py-4">جزییات</th>
+                </tr>
+              </thead>
+              <tbody class="">
+                {% for product in products %}
+                <tr class="border-b border-neutral-200 bg-black/[0.02] h-16 dark:border-white/10 p-12">
+                  <td class="whitespace-nowrap text-right px-6 py-5 font-medium">{{ forloop.counter }}</td>
+                  <td class="whitespace-nowrap px-6 py-4">{{ product.fa_title }}</td>
+                  <td class="whitespace-nowrap px-6 py-4">{{ product.size }}</td>
+                  <td class="whitespace-nowrap px-6 py-4">
+                    <a class="text-blue-300" href="{% url 'products:product_detail' product.slug %}">مشاهده بیشتر</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
 
 {% endblock %}
