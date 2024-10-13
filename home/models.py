@@ -38,6 +38,7 @@ class ContactUs(models.Model):
 	email = models.EmailField(verbose_name='ایمیل')
 	fa_description = models.TextField(verbose_name='آدرس')
 	location = models.TextField(verbose_name='موقعیت مکانی')
+	logo = models.ImageField(upload_to='logo/', verbose_name=("لوگو"), null=True, blank=True)
 
 
 	def __str__(self):

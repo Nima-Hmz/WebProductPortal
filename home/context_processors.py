@@ -15,5 +15,6 @@ def current_language(request):
     output['contact_email'] = contactus.email 
     output['contact_location'] = contactus.location
     output['web_title'] = first_title.fa_title
+    output['logo'] = contactus.logo
 
     return output
