@@ -28,16 +28,34 @@
         </div>
 
         {% endfor %}
+
+
         <div class="flex w-full items-center mt-10 justify-center space-x-2">
-            <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
-                قبلی
-            </button>
-            <span class="bg-blue-300 text-white px-4 py-2 rounded">
-                ۱
-            </span>
-            <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
-                بعدی
-            </button>
+
+            {% if article_list1.has_previous %}
+            <a href="{% url 'articles:article_list' %}?page={{article_list1.previous_page_number}}">
+                <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
+                    قبلی
+                </button>
+            </a>
+            {% endif %}
+
+            {% for i in article_list1.paginator.page_range %}
+                {% if article_list1.number == i %}
+                <span class="bg-blue-300 text-white px-4 py-2 rounded">
+                    {{ i }}
+                </span>
+                {% endif %}
+            {% endfor %}
+
+            {% if article_list1.has_next %}
+            <a href="{% url 'articles:article_list' %}?page={{article_list1.next_page_number}}">
+                <button class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-400">
+                    بعدی
+                </button>
+            </a>
+            {% endif %}
+
         </div>
 
     </div>
