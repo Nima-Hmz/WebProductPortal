@@ -61,8 +61,10 @@
                         <span class="text-xl font-bold">{{ category.fa_title }}</span>
                     </p>
                     <p class="subtext">{{ category.fa_description_short }}</p>
-                    <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
-                    </button>
+                    <a href="{% url 'products:product_list' category.slug %}">
+                        <button class=" text-indigo-300 rounded-md p-2 mt-5">مشاهده محصولات
+                        </button>
+                    </a>
                 </div>
             </div>
             {% endfor %}

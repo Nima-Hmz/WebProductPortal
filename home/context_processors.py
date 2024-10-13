@@ -1,5 +1,4 @@
 from .models import ContactUs
-from .template_manager import language_switcher
 from .models import AboutUs, FirstTitle
 
 def current_language(request):
@@ -8,8 +7,10 @@ def current_language(request):
     aboutus = AboutUs.objects.first()
     first_title = FirstTitle.objects.first()
     output = {}
-    output.update(language_switcher(contactus, "contact"))
-    output.update(language_switcher(aboutus, "about"))
+    output['aboutus_title'] = aboutus.fa_title
+    output['aboutus_description'] = aboutus.fa_description
+    output['contact_description'] = contactus.fa_description
+    output['contact_title'] = contactus.fa_title
     output['contact_phone'] = contactus.phone_number
     output['contact_email'] = contactus.email 
     output['contact_location'] = contactus.location

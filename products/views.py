@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views import View
 from django.shortcuts import get_object_or_404
 from .models import Product, Category
-from home.template_manager import language_switcher
 
 # Create your views here.
 
